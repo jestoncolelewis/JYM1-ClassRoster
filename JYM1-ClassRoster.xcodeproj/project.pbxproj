@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0FB9B3402A7456960091E4ED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FB9B33F2A7456960091E4ED /* main.cpp */; };
+		0FB9B34B2A7456F10091E4ED /* student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FB9B3482A7456F10091E4ED /* student.cpp */; };
+		0FB9B34C2A7456F10091E4ED /* roster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FB9B3492A7456F10091E4ED /* roster.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,11 @@
 /* Begin PBXFileReference section */
 		0FB9B33C2A7456960091E4ED /* JYM1-ClassRoster */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "JYM1-ClassRoster"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB9B33F2A7456960091E4ED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0FB9B3462A7456F10091E4ED /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
+		0FB9B3472A7456F10091E4ED /* degree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = degree.h; sourceTree = "<group>"; };
+		0FB9B3482A7456F10091E4ED /* student.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = student.cpp; sourceTree = "<group>"; };
+		0FB9B3492A7456F10091E4ED /* roster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = roster.cpp; sourceTree = "<group>"; };
+		0FB9B34A2A7456F10091E4ED /* roster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = roster.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +64,11 @@
 		0FB9B33E2A7456960091E4ED /* JYM1-ClassRoster */ = {
 			isa = PBXGroup;
 			children = (
+				0FB9B3472A7456F10091E4ED /* degree.h */,
+				0FB9B3492A7456F10091E4ED /* roster.cpp */,
+				0FB9B34A2A7456F10091E4ED /* roster.h */,
+				0FB9B3482A7456F10091E4ED /* student.cpp */,
+				0FB9B3462A7456F10091E4ED /* student.h */,
 				0FB9B33F2A7456960091E4ED /* main.cpp */,
 			);
 			path = "JYM1-ClassRoster";
@@ -120,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB9B3402A7456960091E4ED /* main.cpp in Sources */,
+				0FB9B34C2A7456F10091E4ED /* roster.cpp in Sources */,
+				0FB9B34B2A7456F10091E4ED /* student.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
