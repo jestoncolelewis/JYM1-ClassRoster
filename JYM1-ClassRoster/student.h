@@ -33,7 +33,7 @@ private:
     string email;
     int age;
     DegreeProgram degreeProgram;
-    int daysToComplete[];
+    int daysToComplete[3];
 };
 
 #endif
