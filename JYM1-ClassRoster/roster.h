@@ -15,7 +15,7 @@ public:
     void printByDegreeProgram(DegreeProgram degreeProgram);
     
 private:
-    Student classRosterArray[5];
+    Student* classRosterArray[5] {};
 };
 
 #endif
