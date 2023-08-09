@@ -2,6 +2,7 @@
 #define ROSTER_H
 
 #include "student.h"
+#include <string>
 
 using namespace std;
 
