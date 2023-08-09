@@ -25,7 +25,7 @@ public:
     void editEmail(string in);
     void editAge(int in);
     void editDegreeProgram(DegreeProgram in);
-    void editDaysToComplete(int in);
+    void editDaysToComplete(int in[3]);
 private:
     string studentID;
     string firstName;
@@ -33,7 +33,7 @@ private:
     string email;
     int age;
     DegreeProgram degreeProgram;
-    int daysToComplete[4];
+    int daysToComplete[3];
 };
 
 #endif

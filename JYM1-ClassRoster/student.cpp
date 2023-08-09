@@ -62,6 +62,8 @@ void Student::editDegreeProgram(DegreeProgram in) {
     degreeProgram = in;
 }
 
-void Student::editDaysToComplete(int in) {
-    daysToComplete[0] = in;
-} // I have a feeling this is wrong
+void Student::editDaysToComplete(int in[3]) {
+    for (int i = 0; i < 3; ++i) {
+        daysToComplete[i] = in[i];
+    }
+}
