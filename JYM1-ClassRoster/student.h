@@ -17,6 +17,8 @@ private:
     DegreeProgram degreeProgram;
     int daysToComplete[3];
 public:
+    Student();
+    ~Student();
     // Accessors
     string getStudentID();
     string getFName();
