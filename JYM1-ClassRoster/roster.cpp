@@ -1,7 +1,19 @@
 #include "roster.h"
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
-//    Determine what to add
+//    Check whether array is empty
+    for (int i = 0; i < 5; ++i) {
+        if (classRosterArray[i] == NULL) {
+    //        Add student data
+            classRosterArray[i]->editFName(studentID);
+            classRosterArray[i]->editFName(firstName);
+            classRosterArray[i]->editLName(lastName);
+            classRosterArray[i]->editEmail(emailAddress);
+            classRosterArray[i]->editAge(age);
+            
+        }
+    }
+    
 }
 
 void Roster::remove(string studentID) {
