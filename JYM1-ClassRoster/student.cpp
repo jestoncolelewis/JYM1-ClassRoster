@@ -38,31 +38,31 @@ int* Student::getDaysToComplete() {
 
 
 // Mutators
-void Student::editStudentID(string in) {
+void Student::setStudentID(string in) {
     studentID = in;
 }
 
-void Student::editFName(string in) {
+void Student::setFName(string in) {
     firstName = in;
 }
 
-void Student::editLName(string in) {
+void Student::setLName(string in) {
     lastName = in;
 }
 
-void Student::editEmail(string in) {
+void Student::setEmail(string in) {
     email = in;
 }
 
-void Student::editAge(int in) {
+void Student::setAge(int in) {
     age = in;
 }
 
-void Student::editDegreeProgram(DegreeProgram in) {
+void Student::setDegreeProgram(DegreeProgram in) {
     degreeProgram = in;
 }
 
-void Student::editDaysToComplete(int in[3]) {
+void Student::setDaysToComplete(int in[3]) {
     for (int i = 0; i < 3; ++i) {
         daysToComplete[i] = in[i];
     }

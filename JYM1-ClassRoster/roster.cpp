@@ -6,13 +6,13 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     for (int i = 0; i < 5; ++i) {
         if (classRosterArray[i] == NULL) {
             // Add student data
-            classRosterArray[i]->editFName(studentID);
-            classRosterArray[i]->editFName(firstName);
-            classRosterArray[i]->editLName(lastName);
-            classRosterArray[i]->editEmail(emailAddress);
-            classRosterArray[i]->editAge(age);
-            classRosterArray[i]->editDaysToComplete(days);
-            classRosterArray[i]->editDegreeProgram(degreeprogram);
+            classRosterArray[i]->setFName(studentID);
+            classRosterArray[i]->setFName(firstName);
+            classRosterArray[i]->setLName(lastName);
+            classRosterArray[i]->setEmail(emailAddress);
+            classRosterArray[i]->setAge(age);
+            classRosterArray[i]->setDaysToComplete(days);
+            classRosterArray[i]->setDegreeProgram(degreeprogram);
         }
     }
     

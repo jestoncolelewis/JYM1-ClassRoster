@@ -19,13 +19,13 @@ public:
     int* getDaysToComplete();
     
     // Mutators
-    void editStudentID(string in);
-    void editFName(string in);
-    void editLName(string in);
-    void editEmail(string in);
-    void editAge(int in);
-    void editDegreeProgram(DegreeProgram in);
-    void editDaysToComplete(int in[3]);
+    void setStudentID(string in);
+    void setFName(string in);
+    void setLName(string in);
+    void setEmail(string in);
+    void setAge(int in);
+    void setDegreeProgram(DegreeProgram in);
+    void setDaysToComplete(int in[3]);
 private:
     string studentID;
     string firstName;
