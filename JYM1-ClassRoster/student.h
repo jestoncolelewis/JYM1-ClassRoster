@@ -8,6 +8,14 @@
 using namespace std;
 
 class Student {
+private:
+    string studentID;
+    string firstName;
+    string lastName;
+    string email;
+    int age;
+    DegreeProgram degreeProgram;
+    int daysToComplete[3];
 public:
     // Accessors
     string getStudentID();
@@ -26,14 +34,6 @@ public:
     void setAge(int in);
     void setDegreeProgram(DegreeProgram in);
     void setDaysToComplete(int in[3]);
-private:
-    string studentID;
-    string firstName;
-    string lastName;
-    string email;
-    int age;
-    DegreeProgram degreeProgram;
-    int daysToComplete[3];
 };
 
 #endif
