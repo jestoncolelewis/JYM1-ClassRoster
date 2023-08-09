@@ -2,6 +2,7 @@
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
 //    Check whether array is empty
+    int days[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
     for (int i = 0; i < 5; ++i) {
         if (classRosterArray[i] == NULL) {
     //        Add student data
@@ -10,7 +11,8 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
             classRosterArray[i]->editLName(lastName);
             classRosterArray[i]->editEmail(emailAddress);
             classRosterArray[i]->editAge(age);
-            
+            classRosterArray[i]->editDaysToComplete(days);
+            classRosterArray[i]->editDegreeProgram(degreeprogram);
         }
     }
     
