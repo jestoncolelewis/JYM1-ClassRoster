@@ -6,14 +6,14 @@
 
 using namespace std;
 
-class Roster {    
+class Roster {
 private:
     Student* classRosterArray[5] {};
 public:
     Roster();
     ~Roster();
-    string* parse(string in);
-    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
+    string* parse(string row);
+    void add(int i, string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
     void remove(string studentID);
     void printAll();
     void printAverageDaysInCourse(string studentID);
