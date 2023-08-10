@@ -4,33 +4,25 @@ Roster::Roster() {}
 
 Roster::~Roster() {}
 
-string* Roster::parse(string in) {
+string* Roster::parse(string row) {
     string* singleStudent = new string[9];
-    string currentStudent = in;
     size_t pos = 0;
     string delimiter = ",";
     int j = 0;
-    while((pos = currentStudent.find(delimiter)) != string::npos) {
-        singleStudent[j] = currentStudent.substr(0, pos);
-        currentStudent.erase(0, pos + delimiter.length());
+    while((pos = row.find(delimiter)) != string::npos) {
+        singleStudent[j] = row.substr(0, pos);
+        row.erase(0, pos + delimiter.length());
         ++j;
     }
-    singleStudent[8] = currentStudent;
+    singleStudent[8] = row;
     
     return singleStudent;
 }
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
+void Roster::add(int i, string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
     int days[] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
-    Student student(studentID, firstName, lastName, emailAddress, age, degreeprogram, days);
-    student.getStudentID();
-    student.getFName();
-    student.getLName();
-    student.getEmail();
-    student.getAge();
-    student.getDegreeProgram();
-    student.getDaysToComplete();
+    this->classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, degreeprogram, days);
 }
 
 void Roster::remove(string studentID) {
@@ -43,7 +35,11 @@ void Roster::remove(string studentID) {
 
 void Roster::printAll() {
     // Loop through all students
-    // print student data in a tab separated format
+    for (int i = 0; i < 5; ++i) {
+        Student student = *this->classRosterArray[i];
+        // print student data in a tab separated format
+        cout << student.getStudentID() << "   " << student.getFName() << "   " << student.getLName() << "    " << student.getAge() << " " << student.getDaysToComplete() << "    " << student.getDegreeProgram() << endl;
+    }
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
