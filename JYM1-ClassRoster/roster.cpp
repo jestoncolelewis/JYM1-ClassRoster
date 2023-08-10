@@ -4,23 +4,32 @@ Roster::Roster() {}
 
 Roster::~Roster() {}
 
+string* Roster::parse(string in) {
+    string* singleStudent = new string[9];
+    string currentStudent = in;
+    size_t pos = 0;
+    string delimiter = ",";
+    int j = 0;
+    while((pos = currentStudent.find(delimiter)) != string::npos) {
+        singleStudent[j] = currentStudent.substr(0, pos);
+        currentStudent.erase(0, pos + delimiter.length());
+        ++j;
+    }
+    singleStudent[8] = currentStudent;
+    
+    return singleStudent;
+}
+
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
     int days[] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
-    Student student;
-    student.setStudentID(studentID);
+    Student student(studentID, firstName, lastName, emailAddress, age, degreeprogram, days);
     student.getStudentID();
-    student.setFName(firstName);
     student.getFName();
-    student.setLName(lastName);
     student.getLName();
-    student.setEmail(emailAddress);
     student.getEmail();
-    student.setAge(age);
     student.getAge();
-    student.setDegreeProgram(degreeprogram);
     student.getDegreeProgram();
-    student.setDaysToComplete(days);
     student.getDaysToComplete();
 }
 
