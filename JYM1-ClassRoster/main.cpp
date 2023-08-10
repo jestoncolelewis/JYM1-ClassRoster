@@ -36,8 +36,10 @@ int main() {
             cout << singleStudent[8] << " is not a valid degree." << endl;
         }
         
-        classRoster.add(singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
+        classRoster.add(i, singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
     }
+    
+    classRoster.printAll();
     
     return 0;
 }
