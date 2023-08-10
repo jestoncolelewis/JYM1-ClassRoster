@@ -7,22 +7,21 @@ Roster::~Roster() {}
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
     int days[] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
-    Student joe;
-    joe.setStudentID(studentID);
-    joe.getStudentID();
-    joe.setFName(firstName);
-    joe.getFName();
-    joe.setLName(lastName);
-    joe.getLName();
-    joe.setEmail(emailAddress);
-    joe.getEmail();
-    joe.setAge(age);
-    joe.getAge();
-    joe.setDegreeProgram(degreeprogram);
-    joe.getDegreeProgram();
-    joe.setDaysToComplete(days);
-    joe.getDaysToComplete();
-    
+    Student student;
+    student.setStudentID(studentID);
+    student.getStudentID();
+    student.setFName(firstName);
+    student.getFName();
+    student.setLName(lastName);
+    student.getLName();
+    student.setEmail(emailAddress);
+    student.getEmail();
+    student.setAge(age);
+    student.getAge();
+    student.setDegreeProgram(degreeprogram);
+    student.getDegreeProgram();
+    student.setDaysToComplete(days);
+    student.getDaysToComplete();
 }
 
 void Roster::remove(string studentID) {
