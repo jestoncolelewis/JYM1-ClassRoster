@@ -38,7 +38,7 @@ void Roster::printAll() {
     for (int i = 0; i < 5; ++i) {
         Student student = *this->classRosterArray[i];
         // print student data in a tab separated format
-        cout << student.getStudentID() << "   " << student.getFName() << "   " << student.getLName() << "    " << student.getAge() << " " << student.getDaysToComplete() << "    " << student.getDegreeProgram() << endl;
+        cout << student.getStudentID() << "\t" << student.getFName() << "\t" << student.getLName() << "\t" << student.getAge() << "\t" << student.getDaysToComplete() << "\t" << student.getDegreeProgram() << endl;
     }
 }
 
