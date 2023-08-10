@@ -1,5 +1,9 @@
 #include "student.h"
 
+Student::Student() : studentID{"None"}, firstName{"John"}, lastName{"Doe"}, email{"noreply@email.com"}, age{18}, degreeProgram{SOFTWARE}, daysToComplete{7, 14, 31} {}
+
+Student::~Student() {}
+
 // Accessors
 string Student::getStudentID() {
     cout << studentID << endl;
