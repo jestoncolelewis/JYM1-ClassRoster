@@ -13,24 +13,19 @@
 using namespace std;
 
 int main() {
+    cout << "C867 Scripting & Programming: Applications" << endl;
+    cout << "Language: C++" << endl;
+    cout << "Student ID: 010639500" << endl;
+    cout << "Jeston Lewis" << endl;
+    
+    Roster classRoster;
     DegreeProgram degree {SOFTWARE};
-    Roster roster;
     
     const string studentData[] = {"A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY", "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK", "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE", "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", "A5,Jeston,Lewis,jlew910@wgu.edu,34,15,50,28,SOFTWARE"};
     
     for (int i = 0; i < 5; ++i) {
-        string singleStudent[9];
-        string currentStudent = studentData[i];
-        size_t pos = 0;
-        string delimiter = ",";
-        int j = 0;
-        while((pos = currentStudent.find(delimiter)) != string::npos) {
-            singleStudent[j] = currentStudent.substr(0, pos);
-            currentStudent.erase(0, pos + delimiter.length());
-            ++j;
-        }
+        string* singleStudent = classRoster.parse(studentData[i]);
         
-        singleStudent[8] = currentStudent;
         if (singleStudent[8] == "SECURITY") {
             degree = SECURITY;
         } else if (singleStudent[8] == "NETWORK") {
@@ -41,7 +36,7 @@ int main() {
             cout << singleStudent[8] << " is not a valid degree." << endl;
         }
         
-        roster.add(singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
+        classRoster.add(singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
     }
     
     return 0;
