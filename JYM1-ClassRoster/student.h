@@ -18,6 +18,7 @@ private:
     int daysToComplete[3];
 public:
     Student();
+    Student(const Student &source);
     ~Student();
     // Accessors
     string getStudentID();

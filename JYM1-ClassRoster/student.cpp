@@ -2,6 +2,8 @@
 
 Student::Student() : studentID{"None"}, firstName{"John"}, lastName{"Doe"}, email{"noreply@email.com"}, age{18}, degreeProgram{SOFTWARE}, daysToComplete{7, 14, 31} {}
 
+Student::Student(const Student &source) : studentID{source.studentID}, firstName{source.firstName}, lastName{source.lastName}, email{source.email}, age{source.age}, degreeProgram{source.degreeProgram}, daysToComplete{source.daysToComplete[0], source.daysToComplete[1], source.daysToComplete[2]} {}
+
 Student::~Student() {}
 
 // Accessors
@@ -31,12 +33,24 @@ int Student::getAge() {
 }
 
 DegreeProgram Student::getDegreeProgram() {
-    cout << degreeProgram << endl;
+    string degreeProgram_str;
+    switch (degreeProgram) {
+        case SECURITY:
+            degreeProgram_str = "SECURITY";
+            break;
+        case NETWORK:
+            degreeProgram_str = "NETWORK";
+            break;
+        case SOFTWARE:
+            degreeProgram_str = "SOFTWARE";
+            break;
+    }
+    cout << degreeProgram_str << endl;
     return degreeProgram;
 }
 
 int* Student::getDaysToComplete() {
-    cout << daysToComplete << endl;
+    cout << daysToComplete[0] << ", " << daysToComplete[1] << ", " << daysToComplete[2] << endl;
     return daysToComplete;
 }
 
