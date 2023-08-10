@@ -8,27 +8,22 @@ Student::~Student() {}
 
 // Accessors
 string Student::getStudentID() {
-    cout << studentID << endl;
     return studentID;
 }
 
 string Student::getFName() {
-    cout << firstName << endl;
     return firstName;
 }
 
 string Student::getLName() {
-    cout << lastName << endl;
     return lastName;
 }
 
 string Student::getEmail() {
-    cout << email << endl;
     return email;
 }
 
 int Student::getAge() {
-    cout << age << endl;
     return age;
 }
 
@@ -45,12 +40,10 @@ DegreeProgram Student::getDegreeProgram() {
             degreeProgram_str = "SOFTWARE";
             break;
     }
-    cout << degreeProgram_str << endl;
     return degreeProgram;
 }
 
 int* Student::getDaysToComplete() {
-    cout << daysToComplete[0] << ", " << daysToComplete[1] << ", " << daysToComplete[2] << endl;
     return daysToComplete;
 }
 
