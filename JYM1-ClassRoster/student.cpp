@@ -1,6 +1,6 @@
 #include "student.h"
 
-Student::Student() : studentID{"None"}, firstName{"John"}, lastName{"Doe"}, email{"noreply@email.com"}, age{18}, degreeProgram{SOFTWARE}, daysToComplete{7, 14, 31} {}
+Student::Student(string studentId_val, string firstName_val, string lastName_val, string email_val, int age_val, DegreeProgram degreeProgram_val, int daysToComplete_val[3]) : studentID{studentId_val}, firstName{firstName_val}, lastName{lastName_val}, email{email_val}, age{age_val}, degreeProgram{degreeProgram_val}, daysToComplete{daysToComplete_val[0], daysToComplete_val[1], daysToComplete_val[2]} {}
 
 Student::Student(const Student &source) : studentID{source.studentID}, firstName{source.firstName}, lastName{source.lastName}, email{source.email}, age{source.age}, degreeProgram{source.degreeProgram}, daysToComplete{source.daysToComplete[0], source.daysToComplete[1], source.daysToComplete[2]} {}
 
