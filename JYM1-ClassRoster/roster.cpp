@@ -5,11 +5,23 @@ Roster::Roster() {}
 Roster::~Roster() {}
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
-    // Check whether array is empty
-    /* int days[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
-    for (int i = 0; i < 5; ++i) {
-        
-    } */
+    int days[] = {daysInCourse1, daysInCourse2, daysInCourse3};
+    
+    Student joe;
+    joe.setStudentID(studentID);
+    joe.getStudentID();
+    joe.setFName(firstName);
+    joe.getFName();
+    joe.setLName(lastName);
+    joe.getLName();
+    joe.setEmail(emailAddress);
+    joe.getEmail();
+    joe.setAge(age);
+    joe.getAge();
+    joe.setDegreeProgram(degreeprogram);
+    joe.getDegreeProgram();
+    joe.setDaysToComplete(days);
+    joe.getDaysToComplete();
     
 }
 
