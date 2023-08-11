@@ -46,16 +46,20 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 // MARK: remove
 void Roster::remove(string studentID) {
     for (int i = 0; i < 5; ++i) {
+        if (this->classRosterArray[i] == NULL) {
+            // if not print
+            cout << "\nRemoving " << studentID << " again" << endl;
+            const string errMsg = "No student with ID: " + studentID + " exists.";
+            cout << errMsg << endl;
+            break;
+        }
         Student student = *this->classRosterArray[i];
         // check if student exists
         if (student.getStudentID() == studentID) {
             cout << "\nRemoving " << studentID << endl;
             // remove specific student data from array
             this->classRosterArray[i] = NULL;
-        } else {
-            // if not print
-            const string errMsg = "No student with ID: " + studentID + " exists.";
-            cout << errMsg << endl;
+            break;
         }
     }
 }
@@ -65,11 +69,15 @@ void Roster::printAll() {
     cout << "\nDisplaying all students:" << endl;
     // Loop through all students
     for (int i = 0; i < 5; ++i) {
-        Student student = *this->classRosterArray[i];
-        int* days = student.getDaysToComplete();
-        string degrees[3] = {"SECURITY", "NETWORK", "SOFTWARE"};
-        // print student data in a tab separated format
-        cout << student.getStudentID() << "\t" << student.getFName() << "\t" << student.getLName() << "\t" << student.getAge() << "\t" << "{" << days[0] << "," << days[1] << "," << days[2] << "}" << "\t" << degrees[student.getDegreeProgram()] << endl;
+        if (this->classRosterArray[i] == NULL) {
+            continue;
+        } else {
+            Student student = *this->classRosterArray[i];
+            int* days = student.getDaysToComplete();
+            string degrees[3] = {"SECURITY", "NETWORK", "SOFTWARE"};
+            // print student data in a tab separated format
+            cout << student.getStudentID() << "\t" << student.getFName() << "\t" << student.getLName() << "\t" << student.getAge() << "\t" << "{" << days[0] << "," << days[1] << "," << days[2] << "}" << "\t" << degrees[student.getDegreeProgram()] << endl;
+        }
     }
     cout << endl;
 }
