@@ -7,9 +7,8 @@
 using namespace std;
 
 class Roster {
-private:
-    Student* classRosterArray[5] {};
 public:
+    Student* classRosterArray[5] {};
     Roster();
     ~Roster();
     string* parse(string row);

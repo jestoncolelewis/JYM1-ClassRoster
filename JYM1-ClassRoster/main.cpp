@@ -47,6 +47,10 @@ int main() {
     
     classRoster.printAll();
     
+    for (int j = 0; j < 5; ++j) {
+        classRoster.printAverageDaysInCourse(classRoster.classRosterArray[j]->getStudentID());
+    }
+    
     classRoster.printByDegreeProgram(SOFTWARE);
     
     return 0;

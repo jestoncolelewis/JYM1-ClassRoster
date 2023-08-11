@@ -48,6 +48,14 @@ void Roster::printAll() {
 
 void Roster::printAverageDaysInCourse(string studentID) {
     // print average of days in Course for a specific student
+    for (int i = 0; i < 5; ++i){
+        Student student = *this->classRosterArray[i];
+        if (student.getStudentID() == studentID) {
+            int* days = student.getDaysToComplete();
+            int avg = (days[0] + days[1] + days[2])/3;
+            cout << "Student ID: " << studentID << ", average days in course is: " << avg << endl;
+        }
+    }
 }
 
 void Roster::printInvalidEmails() {
@@ -58,7 +66,7 @@ void Roster::printInvalidEmails() {
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-    cout << "Showing students in degree program: SOFTWARE" << endl << endl;
+    cout << "\nShowing students in degree program: SOFTWARE" << endl << endl;
     // prints student information for a specific degree program
     for (int i = 0; i < 5; ++i) {
         Student student = *this->classRosterArray[i];
