@@ -34,6 +34,7 @@ void Roster::remove(string studentID) {
 }
 
 void Roster::printAll() {
+    cout << "\nDisplaying all students:" << endl;
     // Loop through all students
     for (int i = 0; i < 5; ++i) {
         Student student = *this->classRosterArray[i];
@@ -42,6 +43,7 @@ void Roster::printAll() {
         // print student data in a tab separated format
         cout << student.getStudentID() << "\t" << student.getFName() << "\t" << student.getLName() << "\t" << student.getAge() << "\t" << "{" << days[0] << "," << days[1] << "," << days[2] << "}" << "\t" << degrees[student.getDegreeProgram()] << endl;
     }
+    cout << endl;
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
