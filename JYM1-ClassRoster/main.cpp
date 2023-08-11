@@ -19,7 +19,6 @@ int main() {
     cout << "Jeston Lewis" << endl;
     
     Roster classRoster;
-    DegreeProgram degree {SOFTWARE};
     
     const string studentData[] = {
         "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
@@ -30,19 +29,7 @@ int main() {
     };
     
     for (int i = 0; i < 5; ++i) {
-        string* singleStudent = classRoster.parse(studentData[i]);
-        
-        if (singleStudent[8] == "SECURITY") {
-            degree = SECURITY;
-        } else if (singleStudent[8] == "NETWORK") {
-            degree = NETWORK;
-        } else if (singleStudent[8] == "SOFTWARE") {
-            degree = SOFTWARE;
-        } else {
-            cout << singleStudent[8] << " is not a valid degree." << endl;
-        }
-        
-        classRoster.add(i, singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
+        classRoster.parse(studentData[i]);
     }
     
     classRoster.printAll();
