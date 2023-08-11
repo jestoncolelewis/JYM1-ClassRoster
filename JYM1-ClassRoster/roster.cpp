@@ -26,6 +26,7 @@ void Roster::add(int i, string studentID, string firstName, string lastName, str
 }
 
 void Roster::remove(string studentID) {
+    cout << "\nRemoving " << studentID << endl;
     // check if student exists
     // if not print
     const string errMsg = "No student with ID: " + studentID + " exists.";
@@ -78,7 +79,7 @@ void Roster::printInvalidEmails() {
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
-    cout << "\nShowing students in degree program: SOFTWARE" << endl << endl;
+    cout << "\nShowing students in degree program: SOFTWARE\n" << endl;
     // prints student information for a specific degree program
     for (int i = 0; i < 5; ++i) {
         Student student = *this->classRosterArray[i];
