@@ -56,5 +56,16 @@ void Roster::printInvalidEmails() {
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
+    cout << "Showing students in degree program: SOFTWARE" << endl << endl;
     // prints student information for a specific degree program
+    for (int i = 0; i < 5; ++i) {
+        Student student = *this->classRosterArray[i];
+        int* days = student.getDaysToComplete();
+        string degrees[3] = {"SECURITY", "NETWORK", "SOFTWARE"};
+        if (student.getDegreeProgram() == degreeProgram) {
+            // print student data in a tab separated format
+            cout << student.getStudentID() << "\t" << student.getFName() << "\t" << student.getLName() << "\t" << student.getAge() << "\t" << "{" << days[0] << "," << days[1] << "," << days[2] << "}" << "\t" << degrees[student.getDegreeProgram()] << endl;
+        }
+    }
+    cout << endl;
 }

@@ -47,5 +47,7 @@ int main() {
     
     classRoster.printAll();
     
+    classRoster.printByDegreeProgram(SOFTWARE);
+    
     return 0;
 }
