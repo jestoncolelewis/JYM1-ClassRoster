@@ -4,6 +4,7 @@ Roster::Roster() {}
 
 Roster::~Roster() {}
 
+// MARK: parse
 void Roster::parse(string row) {
     DegreeProgram degree {SOFTWARE};
     string* singleStudent = new string[9];
@@ -30,6 +31,7 @@ void Roster::parse(string row) {
     this->add(singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
 }
 
+// MARK: add
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
     int days[] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
@@ -41,6 +43,7 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
     }
 }
 
+// MARK: remove
 void Roster::remove(string studentID) {
     for (int i = 0; i < 5; ++i) {
         Student student = *this->classRosterArray[i];
@@ -57,6 +60,7 @@ void Roster::remove(string studentID) {
     }
 }
 
+// MARK: printAll
 void Roster::printAll() {
     cout << "\nDisplaying all students:" << endl;
     // Loop through all students
@@ -70,6 +74,7 @@ void Roster::printAll() {
     cout << endl;
 }
 
+// MARK: printAverageDaysInCourse
 void Roster::printAverageDaysInCourse(string studentID) {
     // print average of days in Course for a specific student
     for (int i = 0; i < 5; ++i){
@@ -82,6 +87,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
     }
 }
 
+// MARK: printInvalidEmails
 void Roster::printInvalidEmails() {
     cout << "\nDisplaying invalid emails:\n" << endl;
     for (int i = 0; i < 5; ++i) {
@@ -101,6 +107,7 @@ void Roster::printInvalidEmails() {
     cout << note << endl;
 }
 
+// MARK: printByDegreeProgram
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
     cout << "\nShowing students in degree program: SOFTWARE\n" << endl;
     // prints student information for a specific degree program
