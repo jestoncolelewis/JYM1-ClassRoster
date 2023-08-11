@@ -30,10 +30,15 @@ void Roster::parse(string row) {
     this->add(singleStudent[0], singleStudent[1], singleStudent[2], singleStudent[3], stoi(singleStudent[4]), stoi(singleStudent[5]), stoi(singleStudent[6]), stoi(singleStudent[7]), degree);
 }
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
     int days[] = {daysInCourse1, daysInCourse2, daysInCourse3};
     
-    this->classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, degreeprogram, days);
+    for (int i = 0; i < 5; ++i) {
+        if (this->classRosterArray[i] == NULL) {
+            this->classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, degreeProgram, days);
+            break;
+        }
+    }
 }
 
 void Roster::remove(string studentID) {
