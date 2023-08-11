@@ -47,6 +47,8 @@ int main() {
     
     classRoster.printAll();
     
+    classRoster.printInvalidEmails();
+    
     for (int j = 0; j < 5; ++j) {
         classRoster.printAverageDaysInCourse(classRoster.classRosterArray[j]->getStudentID());
     }

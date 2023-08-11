@@ -59,9 +59,21 @@ void Roster::printAverageDaysInCourse(string studentID) {
 }
 
 void Roster::printInvalidEmails() {
-    // verifies student emails
-    // prints message for invalid email addresses
-    const string note = "Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').";
+    cout << "\nDisplaying invalid emails:\n" << endl;
+    for (int i = 0; i < 5; ++i) {
+        Student student = *this->classRosterArray[i];
+        // verifies student emails
+        string email = student.getEmail();
+        size_t pos = 0;
+        string e_at = "@";
+        string e_space = " ";
+        string e_dot = ".";
+        if ((pos = email.find(e_at)) == string::npos || (pos = email.find(e_space)) != string::npos || (pos = email.find(e_dot)) == string::npos) {
+            // prints message for invalid email addresses
+            cout << email << " - is invalid." << endl;
+        }
+    }
+    const string note = "\nNote: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').\n";
     cout << note << endl;
 }
 
