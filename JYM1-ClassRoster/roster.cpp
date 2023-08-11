@@ -48,7 +48,7 @@ void Roster::remove(string studentID) {
     for (int i = 0; i < 5; ++i) {
         if (this->classRosterArray[i] == NULL) {
             // if not print
-            cout << "\nRemoving " << studentID << " again" << endl;
+            cout << "Removing " << studentID << " again" << endl;
             const string errMsg = "No student with ID: " + studentID + " exists.";
             cout << errMsg << endl;
             break;
@@ -56,7 +56,7 @@ void Roster::remove(string studentID) {
         Student student = *this->classRosterArray[i];
         // check if student exists
         if (student.getStudentID() == studentID) {
-            cout << "\nRemoving " << studentID << endl;
+            cout << "Removing " << studentID << endl;
             // remove specific student data from array
             this->classRosterArray[i] = NULL;
             break;
