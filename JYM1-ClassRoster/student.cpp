@@ -6,6 +6,13 @@ Student::Student(const Student &source) : studentID{source.studentID}, firstName
 
 Student::~Student() {}
 
+void Student::print() {
+    int* days = this->getDaysToComplete();
+    string degrees[3] = {"SECURITY", "NETWORK", "SOFTWARE"};
+    // print student data in a tab separated format
+    cout << this->getStudentID() << "\t" << this->getFName() << "\t" << this->getLName() << "\t" << this->getAge() << "\t" << "{" << days[0] << "," << days[1] << "," << days[2] << "}" << "\t" << degrees[this->getDegreeProgram()] << endl;
+}
+
 // Accessors
 string Student::getStudentID() {
     return studentID;

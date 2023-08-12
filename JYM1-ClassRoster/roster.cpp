@@ -73,10 +73,7 @@ void Roster::printAll() {
             continue;
         } else {
             Student student = *this->classRosterArray[i];
-            int* days = student.getDaysToComplete();
-            string degrees[3] = {"SECURITY", "NETWORK", "SOFTWARE"};
-            // print student data in a tab separated format
-            cout << student.getStudentID() << "\t" << student.getFName() << "\t" << student.getLName() << "\t" << student.getAge() << "\t" << "{" << days[0] << "," << days[1] << "," << days[2] << "}" << "\t" << degrees[student.getDegreeProgram()] << endl;
+            student.print();
         }
     }
     cout << endl;

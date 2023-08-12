@@ -20,6 +20,9 @@ public:
     Student(string studentId_val, string firstName_val, string lastName_val, string email_val, int age_val, DegreeProgram degreeProgram_val, int daysToComplete_val[3]);
     Student(const Student &source);
     ~Student();
+    
+    void print();
+    
     // Accessors
     string getStudentID();
     string getFName();
