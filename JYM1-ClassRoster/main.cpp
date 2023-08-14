@@ -18,7 +18,7 @@ int main() {
     cout << "Student ID: 010639500" << endl;
     cout << "Jeston Lewis" << endl;
     
-    Roster* classRoster = new Roster();
+    Roster classRoster;
     
     const string studentData[] = {
         "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
@@ -29,25 +29,25 @@ int main() {
     };
     
     for (int i = 0; i < 5; ++i) {
-        classRoster->parse(studentData[i]);
+        classRoster.parse(studentData[i]);
     }
     
-    classRoster->printAll();
+    classRoster.printAll();
     
-    classRoster->printInvalidEmails();
+    classRoster.printInvalidEmails();
     
     for (int j = 0; j < 5; ++j) {
-        classRoster->printAverageDaysInCourse(classRoster->classRosterArray[j]->getStudentID());
+        classRoster.printAverageDaysInCourse(classRoster.classRosterArray[j]->getStudentID());
     }
     
-    classRoster->printByDegreeProgram(SOFTWARE);
+    classRoster.printByDegreeProgram(SOFTWARE);
     
-    classRoster->remove("A3");
+    classRoster.remove("A3");
     
-    classRoster->printAll();
+    classRoster.printAll();
     
-    classRoster->remove("A3");
+    classRoster.remove("A3");
     
-    delete classRoster;
+    classRoster.~Roster();
     return 0;
 }
