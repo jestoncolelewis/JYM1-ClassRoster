@@ -2,7 +2,15 @@
 
 Roster::Roster() {}
 
-Roster::~Roster() {}
+Roster::~Roster() {
+    for (int i = 0; i < 5; ++i) {
+        if (this->classRosterArray[i] == NULL) {
+            continue;
+        }
+        delete classRosterArray[i];
+        classRosterArray[i] = NULL;
+    }
+}
 
 // MARK: parse
 void Roster::parse(string row) {
@@ -46,22 +54,23 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 // MARK: remove
 void Roster::remove(string studentID) {
     for (int i = 0; i < 5; ++i) {
-        if (this->classRosterArray[i] == NULL) {
-            // if not print
-            cout << "Removing " << studentID << " again" << endl;
-            const string errMsg = "No student with ID: " + studentID + " exists.";
-            cout << errMsg << endl;
-            break;
+        if (classRosterArray[i] == NULL) {
+            continue;
         }
-        Student student = *this->classRosterArray[i];
+        Student * student = classRosterArray[i];
         // check if student exists
-        if (student.getStudentID() == studentID) {
+        if (student->getStudentID() == studentID) {
             cout << "Removing " << studentID << endl;
             // remove specific student data from array
+            delete classRosterArray[i];
             this->classRosterArray[i] = NULL;
-            break;
+            return;
         }
     }
+    // if not print
+    cout << "Removing " << studentID << " again" << endl;
+    const string errMsg = "No student with ID: " + studentID + " exists.";
+    cout << errMsg << endl;
 }
 
 // MARK: printAll
