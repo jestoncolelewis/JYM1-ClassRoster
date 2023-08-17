@@ -48,6 +48,5 @@ int main() {
     
     classRoster.remove("A3");
     
-    classRoster.~Roster();
     return 0;
 }
